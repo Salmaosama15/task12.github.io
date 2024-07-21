@@ -3,10 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="indexx.css" />
+    <title>Product Cards</title>
+    <style>
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 80%; /* Adjust width as needed */
+      }
+
+      .card {
+        margin: 10px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 30%; /* Adjust width for 3 cards in a row */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <script src="indexx.js"></script>
+    <div class="card-container">
+      <div class="card">
+        <img src="s10p333.jpg" alt="image 1" />
+        <h2>Product 1</h2>
+        <p>Description of product 1...</p>
+      </div>
+      <div class="card">
+        <img src="s10p333.jpg" alt="image 2" />
+        <h2>Product 2</h2>
+        <p>Description of product 2...</p>
+      </div>
+      <div class="card">
+        <img src="s10p333.jpg" alt="image 3" />
+        <h2>Product 3</h2>
+        <p>Description of product 3...</p>
+      </div>
+    </div>
+
+    <script>
+      const products = [
+        { name: "Product 1", description: "Description of product 1..." },
+        { name: "Product 2", description: "Description of product 2..." },
+        { name: "Product 3", description: "Description of product 3..." },
+      ];
+
+      const cards = document.querySelectorAll(".card");
+
+      for (let i = 0; i < products.length; i++) {
+        cards[i].querySelector("h2").textContent = products[i].name;
+        cards[i].querySelector("p").textContent = products[i].description;
+      }
+    </script>
   </body>
 </html>
